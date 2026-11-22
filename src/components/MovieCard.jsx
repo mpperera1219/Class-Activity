@@ -1,7 +1,7 @@
+import { useState } from "react";
 export default function MovieCard({ movie }) {
   // TASK 1: give this card memory. Add a piece of state called favourite (starts false).
-  const favourite = false;
-
+  const [favourite, setFavourite] = useState(false);  
   return (
     <article className="card">
       <p className="code">{movie.genre}</p>
@@ -13,7 +13,9 @@ export default function MovieCard({ movie }) {
         {favourite ? "Favourite" : "Not a favourite"}
       </span>
       {/* TASK 1: make this button toggle favourite. Its text should change too. */}
-      <button>Add favourite</button>
+      <button onClick={() => setFavourite(!favourite)}>
+  {favourite ? "Remove favourite" : "Add favourite"}
+</button>
       {/* TASK 6a: add a <Link> to /movies/<id> here */}
     </article>
   );

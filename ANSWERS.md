@@ -4,23 +4,22 @@ Name:
 
 Answer each question in your own words, two or three sentences. Do not paste an AI answer. You may be asked to explain these in a viva.
 
-## Task 1
 
 **1.1 (Explain)** In your own words, why did the Favourite button do nothing while favourite was an ordinary variable?
 
-My answer:
+My answer: Because favourite was a ordinary veriable . react did not rerender the component when it changed,so the button and badge stayed the same . React only notice update through state
 
 
 
 **1.2 (Predict)** There are three cards and you click Add favourite on the second one. Which cards change, and why?
 
-My answer:
+My answer: Only second card. Because state has seperate memory for each component
 
 
 
 **1.3 (Fix)** A friend wrote onClick={setFavourite(true)} and gets "Too many re-renders". What is wrong and how do you fix it?
 
-My answer:
+My answer: Because of () this code runs it during render instead of waiting for a click,which updates state,trigger another render and cause an infinite loop . To fix  onClick={() => setfavourite (true)}
 
 
 
